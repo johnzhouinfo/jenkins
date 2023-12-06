@@ -19,6 +19,7 @@ USER jenkins
 
 # 安装插件或其他Jenkins配置，根据你的需求进行修改
 
+
 # 暴露Jenkins端口
 EXPOSE 8080
 
