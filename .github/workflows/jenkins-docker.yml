@@ -34,5 +34,5 @@ jobs:
           docker buildx create --use
           docker buildx build \
             --platform ${{ matrix.platform }} \
-            -t ${{ secrets.DOCKER_USERNAME }}/jenkins:latest .
+            -t ${{ secrets.DOCKER_USERNAME }}/jenkins:latest ./jenkins/
           docker push ${{ secrets.DOCKER_USERNAME }}/jenkins:latest
