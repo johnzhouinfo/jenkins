@@ -10,9 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # 安装Node.js和npm
-RUN curl -fsSL https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz -o node.tar.xz && \
-    tar -xJf node.tar.xz -C /usr/local --strip-components=1 && \
-    rm node.tar.xz
+RUN apt-get update && apt-get install -y nodejs
 
 # 切换回Jenkins用户
 USER jenkins
