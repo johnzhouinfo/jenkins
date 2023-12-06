@@ -31,8 +31,9 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build create --use
-          docker build build \
+          docker buildx create --use
+          docker buildx build \
+          --push \
             --platform ${{ matrix.platform }} \
             -t ${{ secrets.DOCKER_USERNAME }}/jenkins:latest ./jenkins/
           docker push ${{ secrets.DOCKER_USERNAME }}/jenkins:latest
